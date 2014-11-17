@@ -5,7 +5,9 @@ Template.Main.events( {
 	'submit #addConversation': function ( e ) {
 		// Prevent page reloading
 		e.preventDefault();
-		Session.set( 'conversations', _.uniq( _.union( Session.get( 'conversations' ), [ e.target[ 0 ].value ] ) ) );
+		// Adds only if there is a message
+		if ( e.target[ 0 ].value )
+			Session.set( 'conversations', _.uniq( _.union( Session.get( 'conversations' ), [ e.target[ 0 ].value ] ) ) );
 		// Reset the form
 		e.target.reset();
 	}

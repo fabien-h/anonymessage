@@ -323,19 +323,16 @@ body > header form input[type=submit] {
   -webkit-border-radius: 100%;
   border-radius: 100% 0 0 100%;
   padding: .5rem 2rem .5rem 1rem;
-  -moz-transition: -moz-transform 0.2s ease-out;
-  -o-transition: -o-transform 0.2s ease-out;
-  -webkit-transition: -webkit-transform 0.2s ease-out;
-  transition: transform 0.2s ease-out;
+  -moz-transition: right 0.2s ease-out;
+  -o-transition: right 0.2s ease-out;
+  -webkit-transition: right 0.2s ease-out;
+  transition: right 0.2s ease-out;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 /* line 71, main.scss */
 #aboutButton:hover {
-  -moz-transform: translateX(-1.5rem);
-  -ms-transform: translateX(-1.5rem);
-  -webkit-transform: translateX(-1.5rem);
-  transform: translateX(-1.5rem);
+  right: 0;
 }
 
 /* line 74, main.scss */
