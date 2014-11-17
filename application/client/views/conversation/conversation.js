@@ -5,6 +5,10 @@ Template.Conversation.events( {
 	'submit form': function ( e, tmpl ) {
 		// Prevent page reloading
 		e.preventDefault();
+		console.log( CryptoJS.AES.encrypt( JSON.stringify( {
+			author: tmpl.find( '.userName' ).value || 'anonymous',
+			message: e.target[ 0 ].value
+		} ), this.passPhrase ).toString() );
 		// Send only if there is a message content
 		if ( e.target[ 0 ].value )
 			Meteor.call( 'sendMessage', CryptoJS.AES.encrypt( JSON.stringify( {
