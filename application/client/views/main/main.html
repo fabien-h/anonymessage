@@ -13,16 +13,19 @@
 			conversations = conversations
 		}}
 	{{else}}
-		{{> EmptyStateConversations}}
-
+		{{> EmptyState
+			text = 'No conversation yet'
+		}}
 	{{/if}}
+
+	{{> About}}
 
 </template>
 
-<template name="EmptyStateConversations">
+<template name="EmptyState">
 
-	<div id="emptyState">
-		<span>No conversation yet</span>
+	<div class="emptyState">
+		<span>{{text}}</span>
 	</div>
 
 </template>

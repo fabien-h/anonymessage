@@ -12,6 +12,10 @@
 		<section>
 			{{#each messages}}
 				<div id="{{time}}">({{this.author}}) {{this.message}}</div>
+			{{else}}
+				{{> EmptyState
+					text = 'No message yet'
+				}}
 			{{/each}}
 		</section>
 

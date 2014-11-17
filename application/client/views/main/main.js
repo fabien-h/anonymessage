@@ -59,8 +59,8 @@ Template.Main.rendered = function () {
 
 };
 
-// When the EmptyStateConversations template is rendered
-Template.EmptyStateConversations.rendered = function () {
+// When the EmptyState template is rendered
+Template.EmptyState.rendered = function () {
 
 	// Display the text
 	TweenLite.fromTo( this.find( 'span' ), 0.6, {

@@ -1,0 +1,26 @@
+<template name="About">
+
+	<button id="aboutButton">?</button>
+
+	{{#if aboutDisplayed}}
+		{{> AboutContents}}
+	{{/if}}
+
+</template>
+
+<template name="AboutContents">
+
+	<div id="aboutContents"><div class="contents">
+		<header>
+			<span>About anonymessage</span>
+			<button id="selfClose"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32"><path d="M19.428,16L31.29,4.138c0.947-0.946,0.947-2.482,0-3.428c-0.946-0.947-2.482-0.947-3.428,0L16,12.572L4.138,0.71 c-0.946-0.947-2.482-0.947-3.428,0c-0.947,0.947-0.947,2.482,0,3.428L12.572,16L0.71,27.862c-0.947,0.946-0.947,2.482,0,3.428 C1.183,31.763,1.804,32,2.424,32c0.62,0,1.241-0.237,1.714-0.71L16,19.428L27.862,31.29c0.473,0.474,1.094,0.71,1.714,0.71 c0.62,0,1.241-0.237,1.714-0.71c0.947-0.946,0.947-2.482,0-3.428L19.428,16z"/></svg></button>
+		</header>
+		<section>
+			<p>
+				Enter a <strong>passphrase</strong> to start or join a conversation. Every person connected to the application will recieve your messages. But only the one who opened conversations with your <strong>passphrase</strong> will be able to decrypt them. <br><br>
+				The code source and more informations on the <a href="https://github.com/fabien-h/anonymessage/tree/master/application" target="_blank">github repo</a>.
+			</p>
+		</section>
+	</div></div>
+
+</template>
