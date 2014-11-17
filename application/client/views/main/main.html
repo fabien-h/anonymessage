@@ -1,0 +1,41 @@
+<template name="Main">
+
+	<header>
+		{{> Logo}}
+		<form id="addConversation">
+			<input type="text" placeholder="passphrase">
+			<input type="submit" value="add conversation">
+		</form>
+	</header>
+
+	{{#if conversations}}
+		{{> Conversations
+			conversations = conversations
+		}}
+	{{else}}
+		{{> EmptyStateConversations}}
+
+	{{/if}}
+
+</template>
+
+<template name="EmptyStateConversations">
+
+	<div id="emptyState">
+		<span>No conversation yet</span>
+	</div>
+
+</template>
+
+<template name="Conversations">
+
+	<div id="conversations">
+		{{#each conversations}}
+			{{> Conversation
+				passPhrase = this
+			}}
+		{{/each}}
+	</div>
+
+</template>
+

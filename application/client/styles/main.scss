@@ -1,0 +1,67 @@
+/* **********
+Generic imports
+********** */
+@import "compass/reset";
+@import "compass/css3";
+/* **********
+Responsive design breakpoints
+********** */
+$phonePortrait: "only screen and (max-width:500px)"; // media query sizing
+$overPhonePortrait: "only screen and (min-width:500px)"; // media query sizing
+$tabletPortrait: "only screen and (max-width:768px)"; // media query sizing
+$overtabletPortrait: "only screen and (min-width:768px)"; // media query sizing
+$smallScreen: "only screen and (max-width:1024px)"; // media query sizing
+$overSmallScreen: "only screen and (min-width:1024px)"; // media query sizing
+$mediumScreen: "only screen and (max-width:1280px)"; // media query sizing
+$overMediumScreen: "only screen and (min-width:1280px)"; // media query sizing
+$largeScreen: "only screen and (max-width:1600px)"; // media query sizing
+$overLargeScreen: "only screen and (min-width:1600px)"; // media query sizing
+/* **********
+Fonts
+********** */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+$mainFont: 'Open sans', Helvetica, Arial, sans-serif;
+/* **********
+Generic styles
+********** */
+* { @include box-sizing(border-box); font-family: $mainFont; font-size: 1.4rem; line-height: 1.5; padding: 0; margin: 0;
+	&:focus { outline: none; }
+}
+html { height: 100%; font-size: 62.5%; }
+input, button, select, option { font-family: $mainFont; border: none; }
+a, button, input[type="submit"] { cursor: pointer; }
+input:-webkit-autofill { -webkit-box-shadow: 0 0 0px 900px white inset; }
+/* **********
+Main containers
+********** */
+body { font-family: $mainFont; font-size: 1.4rem; line-height: 1.5; position: absolute; top: 0; left: 0; bottom: 0; right: 0; height: 100%; width: 100%; color: #666; background: #eee; overflow-y: scroll; @include display-flex; @include flex-direction(column); align-items: stretch; overflow-y: hidden;
+	> header { background-color: #fff; flex: 1 1 auto; height: 8rem; max-height: 8rem; min-height: 8rem; @include opacity(0); @include display-flex; @include flex-direction(row); justify-content: space-between;
+		svg { height: 100%; width: 17rem; padding: 0 2rem; @include opacity(0); }
+		form { @include display-flex; align-items: center; justify-content: center; padding: 0 2rem;
+			input[type=text] { border: none; border-bottom: 1px solid #ddd; padding: .5rem 0; margin: 0 1rem; @include opacity(0); }
+			input[type=submit] { padding: .5rem 1rem; @include border-radius(.3rem); color: #fff; background: #666; @include opacity(0); }
+		}
+	}
+	> #conversations { flex: 1 1 auto; @include display-flex; @include flex-direction(row); align-items: stretch;
+		> .conversation { flex: 1 1 auto; @include display-flex; @include flex-direction(column); align-items: stretch; padding: 1rem; @include opacity(0);
+			> header { flex: 1 1 auto; height: 5rem; max-height: 5rem; min-height: 5rem; background: #f6f6f6; @include display-flex; @include flex-direction(row); justify-content: space-between; align-items: center;
+				span { padding: 0 1rem; font-weight: 700; font-size: 1.8rem; }
+				button { height: 100%; padding: 0 1.5rem; background: #ddd;
+					svg { width: 1.5rem; height: 1.5rem; display: block; }
+				}
+			}
+			> section { flex: 1 1 auto; background-color: #fff; overflow-y: auto; padding: .5rem; }
+			> footer { flex: 1 1 auto; height: 9.5rem; max-height: 9.5rem; min-height: 9.5rem; background: #f6f6f6; padding: 1rem; width: 100%;
+				input[type=text] { background: none; border: none; border-bottom: 1px solid #ddd; padding: .5rem 0; display: inline-block; }
+				> input[type=text] { margin-bottom: .5rem; }
+				> form { @include display-flex; @include flex-direction(row); align-items: stretch;
+					> input[type=text] { flex: 1 1 auto; margin-right: 1rem; }
+					> input[type=submit] { padding: .5rem 1rem; @include border-radius(.3rem); color: #fff; background: #666; flex: 1 1 auto; width: 6rem; max-width: 6rem; min-width: 6rem; }
+				}
+			}
+		}
+	}
+	> #emptyState { flex: 1 1 auto; @include display-flex; align-items: center; justify-content: center;
+		> span { display: block; background-color: #ddd; padding: 1.5rem 2rem; @include border-radius(.3rem); @include opacity(0);  }
+	}
+}
