@@ -8,4 +8,6 @@ jparker:crypto-core
 jparker:crypto-aes
 mrt:moment
 infinitedg:gsap
+http
+iron:router
 

@@ -10,3 +10,8 @@ Meteor.startup( function () {
 	Session.set( 'conversations', [] );
 
 } );
+
+
+Router.route( '/', function () {
+	this.render( 'Main' );
+} );
